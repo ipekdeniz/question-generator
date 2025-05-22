@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./documents:/app/documents
+      - ./storage:/app/storage
+    environment:
+      - MODEL_NAME=mistral:7b-instruct
+      - MODEL_TIMEOUT=120.0
+      - PERSIST_DIR=/app/storage/vectordb
+      - HOST=0.0.0.0
+      - PORT=8000
+      - WORKERS=1
+      - EMBEDDING_MODEL=BAAI/bge-small-en-v1.5
+    restart: unless-stopped
+
+  # If you want to include a web UI, you can add it here
+  # web:
+  #   image: nginx:alpine
+  #   ports:
+  #     - "80:80"
+  #   volumes:
+  #     - ./web:/usr/share/nginx/html
+  #   depends_on:
+  #     - app 

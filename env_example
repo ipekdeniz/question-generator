@@ -1,0 +1,19 @@
+# Model Configuration
+MODEL_NAME=mistral:7b-instruct
+MODEL_TIMEOUT=120.0
+
+# Vector DB Configuration
+PERSIST_DIR=./storage/vectordb
+
+# Document Processing
+CHUNK_SIZE=512
+CHUNK_OVERLAP=50
+MAX_DOCUMENT_SIZE=20000
+
+# Server Configuration
+HOST=localhost
+PORT=8000
+WORKERS=4
+
+# Embedding Model
+EMBEDDING_MODEL=BAAI/bge-small-en-v1.5 

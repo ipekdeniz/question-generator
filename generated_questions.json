@@ -1,0 +1,57 @@
+[
+  {
+    "question": "What is the general process of creating an LLM?",
+    "options": [
+      "A) Pretraining and labeling a large dataset",
+      "B) Labeling a small dataset and using it for training",
+      "C) Finetuning on a labeled dataset after pretraining",
+      "D) Labeling a large dataset and using it for finetuning"
+    ],
+    "correct_answer": "C",
+    "explanation": "After pretraining an LLM on a large text corpus, it can be further refined through finetuning using a smaller labeled dataset."
+  },
+  {
+    "question": "What is the purpose of pretraining an LLM?",
+    "options": [
+      "A) To learn to perform specific tasks or domains",
+      "B) To learn to write poetry and code",
+      "C) To develop a broad understanding of language on large text datasets",
+      "D) To train the model on labeled data"
+    ],
+    "correct_answer": "C",
+    "explanation": "Pretraining an LLM involves training it on a large corpus of text without any labeling information, creating a general-purpose model that can be further refined through finetuning."
+  },
+  {
+    "question": "What is the process of using a pretrained LLM for a specific task or domain?",
+    "options": [
+      "A) Fine-tuning it on labeled data related to the task or domain",
+      "B) Pretraining it again on labeled data related to the task or domain",
+      "C) Using it directly without any additional training",
+      "D) Adding new layers to the pretrained LLM for the task or domain"
+    ],
+    "correct_answer": "A",
+    "explanation": "To use a pretrained LLM for a specific task or domain, it can be further trained using a smaller labeled dataset that is more specific to the desired application."
+  },
+  {
+    "question": "What is the term \"raw\" text in relation to an LLM?",
+    "options": [
+      "A) Text that has been labeled and categorized",
+      "B) Unstructured text without any labeling information",
+      "C) Text with formatting characters or documents in unknown languages removed",
+      "D) Text that has been analyzed and broken down into features"
+    ],
+    "correct_answer": "B",
+    "explanation": "\"Raw\" text refers to unstructured text without any labeling information, which serves as input for the initial stage of an LLM's training called pretraining."
+  },
+  {
+    "question": "What are two popular categories of finetuning LLMs?",
+    "options": [
+      "A) Instruction-finetuning and classification-finetuning",
+      "B) Pretrained-finetuning and domain-specific-finetuning",
+      "C) Feature-based-finetuning and rule-based-finetuning",
+      "D) Labeled-data-finetuning and unsupervised-finetuning"
+    ],
+    "correct_answer": "A",
+    "explanation": "In instruction-finetuning, the labeled dataset consists of instruction and answer pairs. In classification finetuning, the labeled dataset consists of texts associated with class labels, such as spam or non-spam emails."
+  }
+]
