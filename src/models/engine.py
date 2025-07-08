@@ -59,7 +59,8 @@ class LLMEngine:
         # Set up LLM
         self.llm = Ollama(
             model=settings.MODEL_NAME,
-            request_timeout=settings.MODEL_TIMEOUT
+            request_timeout=settings.MODEL_TIMEOUT,
+            base_url=settings.OLLAMA_BASE_URL
         )
         
         # Set up embedding model

@@ -17,6 +17,11 @@ STORAGE_DIR = os.path.join(BASE_DIR, "storage")
 MODEL_NAME = os.getenv("MODEL_NAME", "mistral:7b-instruct")
 MODEL_TIMEOUT = float(os.getenv("MODEL_TIMEOUT", "60.0"))
 
+# Ollama settings
+OLLAMA_HOST = os.getenv("OLLAMA_HOST", "10.41.43.3")
+OLLAMA_PORT = int(os.getenv("OLLAMA_PORT", "11434"))
+OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", f"http://{OLLAMA_HOST}:{OLLAMA_PORT}")
+
 # Vector DB settings
 PERSIST_DIR = os.getenv("PERSIST_DIR", os.path.join(STORAGE_DIR, "vectordb"))
 
