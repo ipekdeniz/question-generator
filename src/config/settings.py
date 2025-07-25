@@ -18,7 +18,7 @@ MODEL_NAME = os.getenv("MODEL_NAME", "mistral:7b-instruct")
 MODEL_TIMEOUT = float(os.getenv("MODEL_TIMEOUT", "60.0"))
 
 # Ollama settings
-OLLAMA_HOST = os.getenv("OLLAMA_HOST", "10.41.43.3")
+OLLAMA_HOST = os.getenv("OLLAMA_HOST", "localhost")
 OLLAMA_PORT = int(os.getenv("OLLAMA_PORT", "11434"))
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", f"http://{OLLAMA_HOST}:{OLLAMA_PORT}")
 
@@ -29,14 +29,12 @@ PERSIST_DIR = os.getenv("PERSIST_DIR", os.path.join(STORAGE_DIR, "vectordb"))
 CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "512"))
 CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "50"))
 MAX_DOCUMENT_SIZE = int(os.getenv("MAX_DOCUMENT_SIZE", "20000"))
+EMBEDDING_MODEL_PATH = os.getenv("EMBEDDING_MODEL_PATH", "storage/embedding_cache/bge-small-en-v1.5-sbert")
 
 # Server settings
 HOST = os.getenv("HOST", "localhost")
 PORT = int(os.getenv("PORT", "8000"))
 WORKERS = int(os.getenv("WORKERS", "4"))
-
-# Embedding model
-EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "BAAI/bge-small-en-v1.5")
 
 # Ensure directories exist
 os.makedirs(DOCUMENTS_DIR, exist_ok=True)

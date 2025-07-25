@@ -4,12 +4,13 @@ Main application entry point.
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi_offline import FastAPIOffline
 
 from src.api.endpoints import router
 from src.config import settings
 
-# Create FastAPI application
-app = FastAPI(
+# Create FastAPI application with offline docs
+app = FastAPIOffline(
     title="Document-Based Question Generator",
     description="API for generating multiple-choice questions from documents using LLMs",
     version="1.0.0"
@@ -38,14 +39,3 @@ async def root():
         "status": "running",
         "docs_url": "/docs"
     }
-
-
-if __name__ == "__main__":
-    # Run application
-    uvicorn.run(
-        "src.main:app",
-        host=settings.HOST,
-        port=settings.PORT,
-        workers=settings.WORKERS,
-        reload=True
-    ) 

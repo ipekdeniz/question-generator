@@ -111,7 +111,6 @@ curl -X POST "http://localhost:8000/api/query" \
   - `OLLAMA_PORT`: Ollama server port (default: 11434)
   - `OLLAMA_BASE_URL`: Full Ollama URL (optional override)
 - Adjust chunking parameters in `.env` with `CHUNK_SIZE` and `CHUNK_OVERLAP`
-- Change the embedding model with `EMBEDDING_MODEL`
 
 ## Roadmap
 

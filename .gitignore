@@ -33,4 +33,5 @@ ENV/
 
 # Proje özel
 documents/
-.env 
+.env
+storage/
