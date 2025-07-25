@@ -4,7 +4,6 @@ from llama_index.core.embeddings import BaseEmbedding
 class SentenceTransformerEmbedding(BaseEmbedding):
     def __init__(self, model_path):
         super().__init__()
-        # Pydantic'in attribute kontrolünü bypass et
         object.__setattr__(self, 'model', SentenceTransformer(model_path))
     
     def _get_query_embedding(self, query: str):

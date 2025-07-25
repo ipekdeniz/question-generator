@@ -20,7 +20,6 @@ class IndexManager:
             nodes,
             storage_context=self.storage_context
         )
-        # Engine'deki index'i de güncelle
         self.engine.index = self.index
         self.persist_index()
         print("Vector index created and persisted.")
@@ -52,7 +51,6 @@ class IndexManager:
                     vector_store=self.vector_store,
                     storage_context=storage_context
                 )
-                # Engine'deki index'i de güncelle
                 self.engine.index = self.index
                 print("Index loaded successfully.")
                 return self.index
@@ -74,7 +72,6 @@ class IndexManager:
                     self.chroma_collection.delete(where={})
                     print("ChromaDB collection cleared.")
                 self.index = None
-                # Engine'deki index'i de temizle
                 self.engine.index = None
                 return True
             return False

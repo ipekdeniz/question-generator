@@ -1,5 +1,5 @@
 from src.models.engine import LLMEngine
-from src.models.parser import parse_questions_from_text
+from src.utils.parser import parse_questions_from_text
 from src.utils.document_loader import load_documents, split_documents_into_nodes
 from src.api.schemas import Question, QuestionResponse
 import uuid

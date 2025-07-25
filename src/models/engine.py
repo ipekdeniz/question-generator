@@ -53,7 +53,6 @@ class LLMEngine:
         
         # Set up embedding model
         try:
-            # sentence-transformers tabanlı gerçek embedding
             self.embed_model = SentenceTransformerEmbedding(settings.EMBEDDING_MODEL_PATH)
             print(f"✅ SentenceTransformer embedding model loaded from {settings.EMBEDDING_MODEL_PATH}")
             
