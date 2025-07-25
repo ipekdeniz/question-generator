@@ -25,13 +25,23 @@ def load_documents(docs_dir: str = settings.DOCUMENTS_DIR) -> List[Document]:
         print(f"Created '{docs_dir}' directory. Please add your documents there.")
         return []
     
+    allowed_extensions = {"pdf", "doc", "docx", "txt"}
     documents = SimpleDirectoryReader(docs_dir).load_data()
-    if not documents:
-        print(f"No documents found in '{docs_dir}' directory.")
-        return []
+    filtered_documents = []
     
-    print(f"Successfully loaded {len(documents)} documents.")
-    return documents
+    for doc in documents:
+        filename = os.path.basename(doc.metadata.get('file_name', ''))
+        ext = filename.rsplit('.', 1)[-1].lower()
+        # Skip unsupported file types
+        if ext not in allowed_extensions:
+            print(f"Skipping unsupported file type: {filename}")
+            continue
+        filtered_documents.append(doc)
+    if not filtered_documents:
+        print(f"No valid documents found in '{docs_dir}' directory.")
+        return []
+    print(f"Successfully loaded {len(filtered_documents)} documents.")
+    return filtered_documents
 
 
 def get_document_text(documents: List[Document]) -> str:

@@ -40,21 +40,7 @@ class QuestionResponse(BaseModel):
 
 class GenerateQuestionsRequest(BaseModel):
     """Schema for question generation request."""
-    num_questions: int = Field(5, description="Number of questions to generate", ge=1, le=20)
-    use_all_documents: bool = Field(True, description="Whether to use all documents in the collection")
-    document_ids: Optional[List[str]] = Field(None, description="Specific document IDs to use")
-
-
-class QueryRequest(BaseModel):
-    """Schema for querying the documents."""
-    query: str = Field(..., description="Query text")
-    top_k: int = Field(3, description="Number of results to return", ge=1, le=10)
-
-
-class QueryResponse(BaseModel):
-    """Schema for query response."""
-    answer: str = Field(..., description="Answer to the query")
-    sources: List[str] = Field(..., description="Source documents for the answer")
+    num_questions: int = Field(5, description="Number of questions to generate")
 
 
 class DocumentMetadata(BaseModel):
